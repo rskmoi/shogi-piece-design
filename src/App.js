@@ -60,7 +60,7 @@ function App(props) {
             <h1 className="subtitle is-3 has-text-centered margin-text">スライダーを動かしてお気に入りの駒を作ってみましょう！</h1>
             <div className="columns is-desktop has-text-centered">
                 <div className="column">
-                    <div className="has-text-centered px-6">
+                    <div className="has-text-centered">
                         <form className="block subtitle is-6">
                             Color: <input type="color" id="head" name="head" value={pieceColor}
                                           onChange={doChangePieceColor}/>
