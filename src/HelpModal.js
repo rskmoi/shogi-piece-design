@@ -12,7 +12,7 @@ function HelpModal(props){
     })
 
     return <div>
-        <div className="icon-text subtitle is-5 block-a" onClick={modalActivate}>
+        <div className="subtitle is-5 block-a" onClick={modalActivate}>
             <i className="far fa-question-circle icon-a"/>
         </div>
         <div className="modal" id="help-modal">

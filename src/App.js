@@ -72,59 +72,61 @@ function App(props) {
                     </div>
                 </div>
                 <div className="column has-text-centered">
-                    <div className="block">
-                        <h2 className="is-5 has-text-centered subtitle">縦横比: {aspectRatio}</h2>
-                        <input className="slider is-fullwidth is-circle" step="0.01" min="0.8" max="1.5"
-                               value={aspectRatio} type="range" onChange={doChangeAspectRatio}/>
-                        <h2 className="is-5 has-text-centered subtitle">頂角: {topDegree}°</h2>
-                        <input className="slider is-fullwidth is-circle" step="0.1" min="100" max="180"
-                               value={topDegree} type="range" onChange={doChangeTopDegree}/>
-                        <h2 className="is-5 has-text-centered subtitle">底角: {bottomDegree}°</h2>
-                        <input className="slider is-fullwidth is-circle" step="0.1" min="70" max="90"
-                               value={bottomDegree} type="range" onChange={doChangeBottomDegree}/>
-                    </div>
+                    <div className="px-6">
+                        <div className="block">
+                            <h2 className="is-5 has-text-centered subtitle">縦横比: {aspectRatio}</h2>
+                            <input className="slider is-fullwidth is-circle" step="0.01" min="0.8" max="1.5"
+                                   value={aspectRatio} type="range" onChange={doChangeAspectRatio}/>
+                            <h2 className="is-5 has-text-centered subtitle">頂角: {topDegree}°</h2>
+                            <input className="slider is-fullwidth is-circle" step="0.1" min="100" max="180"
+                                   value={topDegree} type="range" onChange={doChangeTopDegree}/>
+                            <h2 className="is-5 has-text-centered subtitle">底角: {bottomDegree}°</h2>
+                            <input className="slider is-fullwidth is-circle" step="0.1" min="70" max="90"
+                                   value={bottomDegree} type="range" onChange={doChangeBottomDegree}/>
+                        </div>
 
-                    <table className="block table is-bordered is-striped is-fullwidth">
-                        <tbody>
-                        <tr>
-                            <th>頂角の座標</th>
-                            <td>[{topCoords.map((x => x.toFixed(2))).join(", ")}]</td>
-                        </tr>
-                        <tr>
-                            <th>中角(左)の座標</th>
-                            <td>[{middleLeftCoords.map((x => x.toFixed(2))).join(", ")}]</td>
-                        </tr>
-                        <tr>
-                            <th>中角(右)の座標</th>
-                            <td>[{middleRightCoords.map((x => x.toFixed(2))).join(", ")}]</td>
-                        </tr>
-                        <tr>
-                            <th>底角(左)の座標</th>
-                            <td>[{bottomLeftCoords.map((x => x.toFixed(2))).join(", ")}]</td>
-                        </tr>
-                        <tr>
-                            <th>底角(右)の座標</th>
-                            <td>[{bottomRightCoords.map((x => x.toFixed(2))).join(", ")}]</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                        <table className="block table is-bordered is-striped is-fullwidth">
+                            <tbody>
+                            <tr>
+                                <th>頂角の座標</th>
+                                <td>[{topCoords.map((x => x.toFixed(2))).join(", ")}]</td>
+                            </tr>
+                            <tr>
+                                <th>中角(左)の座標</th>
+                                <td>[{middleLeftCoords.map((x => x.toFixed(2))).join(", ")}]</td>
+                            </tr>
+                            <tr>
+                                <th>中角(右)の座標</th>
+                                <td>[{middleRightCoords.map((x => x.toFixed(2))).join(", ")}]</td>
+                            </tr>
+                            <tr>
+                                <th>底角(左)の座標</th>
+                                <td>[{bottomLeftCoords.map((x => x.toFixed(2))).join(", ")}]</td>
+                            </tr>
+                            <tr>
+                                <th>底角(右)の座標</th>
+                                <td>[{bottomRightCoords.map((x => x.toFixed(2))).join(", ")}]</td>
+                            </tr>
+                            </tbody>
+                        </table>
 
-                    <div className="block">
-                        <div className="columns">
-                            <div className="column has-text-centered">
-                                <DownloadImageButton topCoords={topCoords} middleLeftCoords={middleLeftCoords}
-                                                     middleRightCoords={middleRightCoords}
-                                                     bottomLeftCoords={bottomLeftCoords}
-                                                     bottomRightCoords={bottomRightCoords} pieceColor={pieceColor}/>
-                            </div>
-                            <div className="column has-text-centered">
-                                {/*<button className="button">Download Info</button>*/}
-                                <DownloadInfoButton aspectRatio={aspectRatio} topDegree={topDegree}
-                                                    bottomDegree={bottomDegree} topCoords={topCoords}
-                                                    middleLeftCoords={middleLeftCoords}
-                                                    middleRightCoords={middleRightCoords}
-                                                    bottomLeftCoords={bottomLeftCoords}
-                                                    bottomRightCoords={bottomRightCoords} pieceColor={pieceColor}/>
+                        <div className="block">
+                            <div className="columns">
+                                <div className="column has-text-centered">
+                                    <DownloadImageButton topCoords={topCoords} middleLeftCoords={middleLeftCoords}
+                                                         middleRightCoords={middleRightCoords}
+                                                         bottomLeftCoords={bottomLeftCoords}
+                                                         bottomRightCoords={bottomRightCoords} pieceColor={pieceColor}/>
+                                </div>
+                                <div className="column has-text-centered">
+                                    {/*<button className="button">Download Info</button>*/}
+                                    <DownloadInfoButton aspectRatio={aspectRatio} topDegree={topDegree}
+                                                        bottomDegree={bottomDegree} topCoords={topCoords}
+                                                        middleLeftCoords={middleLeftCoords}
+                                                        middleRightCoords={middleRightCoords}
+                                                        bottomLeftCoords={bottomLeftCoords}
+                                                        bottomRightCoords={bottomRightCoords} pieceColor={pieceColor}/>
+                                </div>
                             </div>
                         </div>
                     </div>
