@@ -1,3 +1,5 @@
+@import "~bulma-extensions";
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.has-background-shogiapp {
+  background-color: #473F35;
+}
+
+.margin-text{
+  margin: 30px;
+  padding: 30px;
+}
+
+.icon-a {
+  color: #473F35;
+}
+
+.block-a {
+  text-align: right;
+  margin: 20px;
 }
