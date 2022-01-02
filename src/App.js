@@ -4,9 +4,12 @@ import DownloadImageButton from "./DownloadImageButton";
 import DownloadInfoButton from "./DownloadInfoButton";
 import HelpModal from "./HelpModal";
 import './App.css';
-
+import posthog from "posthog-js";
 
 function App(props) {
+    posthog.init('phc_xxOqBinQWpHoM5hRufqqkMUJJOFxl2H2QMEAqBDmxNt', { api_host: 'https://app.posthog.com' })
+    posthog.opt_in_capturing();
+    posthog.startSessionRecording();
     const [bottomLineLength, setBottomLineLength] = useState(300);
     const [aspectRatio, setAspectRatio] = useState(1.1)
     const [topDegree, setTopDegree] = useState(144);
@@ -31,6 +34,7 @@ function App(props) {
     })
 
     const doChangePieceColor = ((event) => {
+        posthog.capture('ChangeColor', { property: 'value' })
         setPieceColor(event.target.value)
     })
 

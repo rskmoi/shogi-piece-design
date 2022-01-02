@@ -1,7 +1,9 @@
 import React from "react";
+import posthog from "posthog-js";
 
 function DownloadInfoButton(props){
     const downloadImage = (() => {
+        posthog.capture('DownloadInfo', { property: 'value' })
         const info = {
             "aspectRatio": props.aspectRatio,
             "topDegree": props.topDegree,

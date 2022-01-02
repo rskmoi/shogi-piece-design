@@ -1,7 +1,9 @@
 import React from "react";
+import posthog from "posthog-js";
 
 function DownloadImageButton(props){
     const downloadImage = (() => {
+        posthog.capture('DownloadImage', { property: 'value' })
         const canvas = document.createElement('canvas')
         const marginx = 200;
         const marginy = 50;
